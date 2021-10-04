@@ -1,0 +1,8 @@
+---
+
+- name: Modificação de Senhas!
+  hosts: Servers
+  roles:
+    - RebootServers
+
+...
