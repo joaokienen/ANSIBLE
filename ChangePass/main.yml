@@ -1,6 +1,0 @@
----
-
-pass_alias: "{{ lookup('password', '/dev/null length=15 chars=ascii_letters,digits,punctuation') }}"
-#id_number: Shell: 'curl POST http://syspass.redeunifique.com.br/syspass/api.php --data '{ "jsonrpc": "2.0", "method": "account/search", "params": { "authToken": "78018e05f0e9eaad6a7b2e4707ece1db21f8eed6c5d33c2d8cc251621d32846d", "text": "{{ ansible_nodename }}" }, "id": "1" }' | jq ".result.result[0] .id"'
-
-...
