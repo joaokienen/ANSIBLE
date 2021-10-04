@@ -1,6 +1,6 @@
 ---
 
-- name: Modificação de Senhas!
+- name: Aplicando Updates!
   hosts: Servers
   roles:
     - RebootServers
