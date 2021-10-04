@@ -1,7 +1,5 @@
 ---
 
-# https://docs.ansible.com/ansible/latest/collections/ansible/builtin/script_module.html
-
 - name: Executando Backup e copiando arquivos...
   ansible.builtin.script: /etc/ansible/scripts/backupsuspended.sh
   notify: Excluindo contas suspensas...
