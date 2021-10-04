@@ -1,0 +1,19 @@
+---
+
+# https://jianjye.medium.com/how-to-update-user-password-with-ansible-f971f41a3b3e
+
+- name: Colentando dados!  
+  set_fact:
+    my_pass: "{{ pass_alias }}"
+- debug:
+        msg: "{{ ansible_hostname }} = ' {{ my_pass }} '"
+
+- name: Alterando Senha!
+  user:
+    name: root
+    update_password: always
+    password: "{{ my_pass|password_hash('sha512') }}"
+  notify: Instalando dependências!
+  notify: Solicitando id!
+  notify: Alteração de Senha!
+... 
