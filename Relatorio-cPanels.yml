@@ -1,0 +1,14 @@
+---
+- name: Default
+  hosts: cPanels
+  roles:
+    - Recursos      
+#   - RebootCpanels
+#   - TerminateAcc
+
+- name: EnviodeEmail
+  hosts: localhost
+  tasks:
+    - name: Enviando relatórios por E-mail...
+      ansible.builtin.script: /etc/ansible/scripts/EnviaEmail.sh
+...
