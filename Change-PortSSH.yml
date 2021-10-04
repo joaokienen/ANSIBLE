@@ -1,0 +1,10 @@
+---
+- name: Default
+  hosts: cPanels
+  roles:
+    - ChangePortSSH      
+#   - Recursos      
+#   - RebootCpanels
+#   - TerminateAcc
+
+...
