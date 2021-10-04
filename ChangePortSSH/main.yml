@@ -1,0 +1,20 @@
+---
+
+# https://dmsimard.com/2016/03/15/changing-the-ssh-port-with-ansible/
+
+- name: Modificando porta de acesso SSH
+  lineinfile:
+    dest: "/etc/ssh/sshd_config"
+    regexp: "^Port"
+    line: "Port 60022"
+  notify: Reinicialização SSHD
+
+- name: Modificando porta de acesso SSH | SELINUX
+  seport:
+    ports: "60022"
+    proto: "tcp"
+    setype: "ssh_port_t"
+    state: "present"
+  when: ansible_selinux.status == 'enabled'
+
+...  
