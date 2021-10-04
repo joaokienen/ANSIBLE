@@ -1,7 +1,5 @@
 ---
 
-# https://dmsimard.com/2016/03/15/changing-the-ssh-port-with-ansible/
-
 - name: Modificando porta de acesso SSH
   lineinfile:
     dest: "/etc/ssh/sshd_config"
