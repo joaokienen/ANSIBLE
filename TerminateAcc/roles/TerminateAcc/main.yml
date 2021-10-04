@@ -1,0 +1,6 @@
+---
+
+- name: Excluindo contas suspensas...
+  ansible.builtin.script: /etc/ansible/scripts/terminatesuspended.sh
+
+...
