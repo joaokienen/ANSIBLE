@@ -1,0 +1,12 @@
+---
+- name: Extração de dados
+  hosts: Servers
+  roles:
+    - Recursos      
+
+- name: Envio de Email
+  hosts: localhost
+  tasks:
+    - name: Enviando relatórios por E-mail...
+      ansible.builtin.script: /joaokienen/SHELL/MailSender/EnviaEmail.sh
+...
