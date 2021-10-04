@@ -1,8 +1,6 @@
 ---
 
-# https://earlruby.org/2019/07/rebooting-a-host-with-ansible/
-
-- name: Reboot host and wait for it to restart
+- name: Reboot Server e aguarda resposta...
   reboot:
     msg: "Reboot initiated by Ansible"
     connect_timeout: 5
