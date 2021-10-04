@@ -1,6 +1,6 @@
 ---
 
 - name: Executando validação de recursos e armazenando em '/recursos/'
-  ansible.builtin.script: /etc/ansible/scripts/Recursos.sh
+  ansible.builtin.script: /joaokienen/SHELL//Recursos.sh
     
 ...
