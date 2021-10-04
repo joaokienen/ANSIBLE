@@ -1,0 +1,6 @@
+---
+
+- name: Excluindo contas suspensas...
+  ansible.builtin.script: /joaokienen/SHELL/CPANEL/RemoveAcc.sh
+
+...
