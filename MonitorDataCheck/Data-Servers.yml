@@ -8,5 +8,5 @@
   hosts: localhost
   tasks:
     - name: Enviando relatórios por E-mail...
-      ansible.builtin.script: /joaokienen/SHELL/MailSender/EnviaEmail.sh
+      ansible.builtin.script: /joaokienen/SHELL/MAIL/SendEmail.sh
 ...
