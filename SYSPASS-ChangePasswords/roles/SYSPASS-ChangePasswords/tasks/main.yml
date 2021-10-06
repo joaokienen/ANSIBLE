@@ -1,0 +1,33 @@
+---
+
+# Make a var with generated password
+- name: Colentando dados!  
+  set_fact:
+    my_pass: "{{ pass_alias }}"
+- debug:
+        msg: "{{ ansible_hostname }} = ' {{ my_pass }} '"
+
+# Change your password inside your server
+- name: Alterando Senha!
+  user:
+    name: root
+    update_password: always
+    password: "{{ my_pass|password_hash('sha512') }}"
+    
+# Change your password with SysPass >>>>
+
+# Install 'jq' to catch yout ID
+- name: Instalando Dependências!
+  yum: name=jq update_cache=yes state=latest
+
+# Make curl to request your ID
+- name: Solicitando id...
+  shell: "curl POST https://syspass.domain.com.br/api.php --data '{ \"jsonrpc\": \"2.0\", \"method\": \"account/search\", \"params\": { \"authToken\": \"Your-Token\"}, \"text\": \"{{ ansible_nodename }}\" }, \"id\": \"1\" }' | jq \".result.result[0] .id\""
+  register: number
+  check_mode: false
+
+# Make changes with API SysPass with your espcificated data
+- name: Alterando SysPass...
+  shell: "curl https://syspass.domain.com.br/api.php --data '{ \"jsonrpc\": \"2.0\", \"method\": \"account/editPass\", \"params\": { \"authToken\": \"Your-Token\", \"tokenPass\": \"Your-Token\", \"id\": \"{{ number.stdout }}\", \"pass\": \"{{ my_pass }}\" }, \"id\": \"1\" }'"
+
+... 
