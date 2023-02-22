@@ -1,3 +1,0 @@
-# ANSIBLE
-
-✔ Automations in ANSIBLE
